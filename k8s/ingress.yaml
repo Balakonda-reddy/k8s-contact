@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: contact
+spec:
+ rules:
+ - host: k8s-index.devopscoursewithbalakonda.xyz
+   http:
+     paths:
+     - path: /contact.html
+       backend:
+         serviceName: contact-svc
+         servicePort: 80
